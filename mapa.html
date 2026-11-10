@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo | Bloque B</title>
+
+    <link rel="stylesheet" href="mapa.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="index.html" class="volver">← Volver al Inicio</a>
+
+        <div class="identidad">
+            <img src="Imágenes/escudoCarrera.png" id="logoCarrera" alt="Escudo de la carrera">
+            <div>
+                <span>UNIVERSIDAD NACIONAL SIGLO XX</span>
+                <strong>INGENIERÍA INFORMÁTICA</strong>
+            </div>
+        </div>
+
+        <div class="tituloHeader">
+            <span class="iconoMapa">⌖</span>
+            <div>
+                <h1>Mapa Interactivo</h1>
+                <p>Bloque B</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="distribucion">
+
+        <!-- SELECTOR LATERAL -->
+        <aside class="panelPisos">
+            <div class="panelTitulo">
+                <span class="iconoCapas">▱</span>
+                <h2>Selecciona el piso</h2>
+            </div>
+
+            <div class="pisos">
+                <button class="btnPiso activo" data-piso="0">
+                    <span class="numeroPiso">00</span>
+                    <span class="textoPiso">
+                        <strong>Planta Baja</strong>
+                        <small>2 aulas disponibles</small>
+                    </span>
+                </button>
+
+                <button class="btnPiso" data-piso="1">
+                    <span class="numeroPiso">01</span>
+                    <span class="textoPiso">
+                        <strong>Primer Piso</strong>
+                        <small>4 laboratorios y aulas</small>
+                    </span>
+                </button>
+
+                <button class="btnPiso" data-piso="2">
+                    <span class="numeroPiso">02</span>
+                    <span class="textoPiso">
+                        <strong>Segundo Piso</strong>
+                        <small>5 ambientes académicos</small>
+                    </span>
+                </button>
+            </div>
+
+            <div class="instrucciones">
+                <span class="instruccionesIcono">ⓘ</span>
+                <h3>¿Cómo explorar?</h3>
+                <p>Selecciona un piso y haz clic sobre un aula disponible para trasladarte a ella dentro del campus 3D.</p>
+            </div>
+        </aside>
+
+        <!-- MAPA PRINCIPAL -->
+        <section class="panelMapa">
+            <div class="mapaCabecera">
+                <div>
+                    <span class="etiqueta">PLANO DEL EDIFICIO</span>
+                    <h2 id="nombrePiso">PLANTA BAJA</h2>
+                </div>
+
+                <div class="estadoMapa">
+                    <span class="puntoEstado"></span>
+                    Mapa interactivo
+                </div>
+            </div>
+
+            <div class="mapaContainer">
+                <button id="flechaIzquierda" class="flecha" aria-label="Piso anterior">‹</button>
+
+                <div class="areaPlano">
+                    <div class="planoInteractivo">
+
+                    <!-- Aquí se dibujarán los planos SVG -->
+                    <div id="contenedorPlano"></div>
+
+                    <!-- Se conserva para que mapa.js no tenga errores -->
+                    <img
+                        src="Imágenes/PlantaBaja.jpg"
+                        id="mapaPiso"
+                        alt="Mapa"
+                        style="display: none;"
+                    >
+
+                </div>
+                </div>
+
+                <button id="flechaDerecha" class="flecha" aria-label="Piso siguiente">›</button>
+            </div>
+
+            <div class="mapaPie">
+                <div class="leyenda">
+                    <span><i class="colorDisponible"></i> Aula disponible</span>
+                    <span><i class="colorNoDisponible"></i> No disponible</span>
+                </div>
+                <span class="ayudaMapa">Selecciona un ambiente en el plano</span>
+            </div>
+
+            <!-- Se conserva para que mapa.js siga funcionando -->
+            <section class="cursos" aria-hidden="true">
+                <h3>Selecciona un aula</h3>
+                <div id="listaCursos"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="mapa.js"></script>
+<script type="module" src="Planos/vista-planos.js"></script>
+</body>
+</html>
