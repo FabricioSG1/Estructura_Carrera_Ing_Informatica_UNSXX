@@ -96,7 +96,7 @@ export function crearSimboloInformacion(scene, camera, controls, canvas) {
             id: "computacionMovil",
             nombre: "Laboratorio de Computación Móvil",
             posicion: [36.54, 17, -19.76],
-            imagen: "./Imágenes/Aula8.PNG",
+            imagen: "./Imágenes/Aula8.png",
             descripcion: "En este laboratorio, los estudiantes de la mención Computación Móvil desarrollan sus conocimientos en la creación de aplicaciones para dispositivos móviles. Es un espacio orientado al diseño de interfaces, programación de aplicaciones y exploración de tecnologías móviles.",
             areas: [
                 "Desarrollo de aplicaciones móviles.",
@@ -109,7 +109,7 @@ export function crearSimboloInformacion(scene, camera, controls, canvas) {
             id: "aulaBit5",
             nombre: "Aula Bit 5",
             posicion: [33.63, 17, -49.07],
-            imagen: "./Imágenes/Aula9.PNG",
+            imagen: "./Imágenes/Aula9.png",
             descripcion: "El Aula Bit 5 es un espacio destinado a la formación teórica de los estudiantes de Ingeniería Informática. En este ambiente se desarrollan clases, explicaciones, exposiciones y actividades que permiten fortalecer los conocimientos adquiridos durante la carrera.",
             areas: [
                 "Desarrollo de clases teóricas.",
